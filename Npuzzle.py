@@ -1,24 +1,48 @@
 import random as rdm
+import time
 
-def grid(n):
-    number_set = set(range(1, n*n + 1))
-    number_set.add("X")
+def grid(n): #Gera grid inicial e objetivo (grid organizado propiamente), um dos elementos é X
+    number_list = list(range(1, n*n))
+    number_list.append("X")
+    goal_list = number_list.copy()
+
+    global initial_state, goal_state
+    initial_state = []  # Lista para armazenar a matriz inicial
+    goal_state = [] #Lista para armazenar o estado objetivo
     
-    generated_grid = []  # Lista para armazenar a matriz gerada
-    
-    for _ in range(n):
+    for i in range(n):
         row = []
-        for _ in range(n):
-            inside_number = rdm.sample(number_set, 1)[0]
+        for j in range(n):
+            inside_number = rdm.choice(number_list)
             row.append(inside_number)
-            number_set.remove(inside_number)  # Remove o número selecionado do conjunto
-        generated_grid.append(row)
-        print(' '.join(map(str, row)))
-    print("puzzle:\n"+ str(generated_grid))
+            number_list.remove(inside_number)  # Remove o número selecionado do conjunto
+        initial_state.append(row)
+    
+    for index in range(n):
+        row_goal = goal_list[index*n:(index+1)*n]
+        goal_state.append(row_goal)
+
+
+
+    print("Estado inicial:\n" + str(initial_state))
+    print("Estado objetivo:\n" + str(goal_state))
 
 def A_manhattan():
+    #Contar passos
+
+    #Contar nós expandidos
+
+    #Contar média de nós
+
+    #Start timer
+    timer_starter = time.perf_counter()
     print("code")
 
+    #Finish timer
+    timer_finisher = time.perf_counter()
+    print(f"Tempo de execução do algoritmo: {timer_finisher - timer_starter:0.4f} segundos")
+
+    
 def main():
     puzzle_size = int(input("Defina o tamanho do puzzle:"))
     grid(puzzle_size)
@@ -55,7 +79,8 @@ def main():
         #
         return 0 #provisório
     else:
-        return main
+        print("Comando invalido")
+        return main()
 
 if __name__ == "__main__":
     main()
