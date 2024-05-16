@@ -1,6 +1,6 @@
 import manhattan as am
 import auxiliares as aux
-
+import Wrong_position as wp
 
     
 def main():
@@ -20,15 +20,12 @@ def main():
     elif(option == 2):
         #Busca em Profundidade Iterativa
         # 
-        #CODE
+        #CODE3
         #
         return 0 #provisório
     elif(option == 3):
         # A* (peças erradas)
-        # 
-        #CODE
-        #
-        return 0 #provisório
+        wp.A_wrong()
     elif(option == 4):
         # A*(Manhattan)
         am.A_manhattan()
