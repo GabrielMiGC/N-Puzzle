@@ -1,6 +1,5 @@
 import time
 import pprint
-import sys
 import auxiliares as aux # type: ignore
 
 def caminho(no_atual):
@@ -47,8 +46,8 @@ def Profundidade_Iterativa(max_Deep):
         no_atual = lista_aberta.pop(-1)
         nos_expandidos += 1
         lista_fechada.append(no_atual)
-        pprint.pp(no_atual)
-        
+        print("RESTAM NA LISTA ABERTA:", len(lista_aberta))
+        print("NA LISTA FECHADA:",len(lista_fechada))
 
         if no_atual == no_final:
             return caminho(no_atual)

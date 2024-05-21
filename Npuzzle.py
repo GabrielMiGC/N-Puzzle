@@ -11,7 +11,9 @@ import pprint as pr
 def main():
     puzzle_size = int(input("Defina o tamanho do puzzle:"))
     aux.grid(puzzle_size)
-    
+    solv = aux.soluvel(aux.initial_state, puzzle_size)
+    print("Solucionavel? ", solv)
+
     print("Escolha um algoritmo para solucionar o problema:\nBusca em profundidade = 1\nBusca em Profundidade Iterativa = 2\nBusca A* com heurística de quantidade de peças erradas\n"+
           "Busca A* com heurística de distância de Manhattan = 4\nBusca Bidirecional com A* = 5\n")
     option = int(input("Algoritmo desejado:"))
