@@ -41,7 +41,7 @@ def main():
             pr.pprint(stat)
     elif(option == 2):
         #Busca em Profundidade Iterativa
-        trace.start()
+        
         pi.Profundidade_Iterativa(0)
         snapshot = trace.take_snapshot()
         stats = snapshot.statistics('lineno')

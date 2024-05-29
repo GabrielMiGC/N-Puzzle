@@ -19,6 +19,7 @@ def intersec(lista_A_init, lista_A_final):
             if no.position == no_final.position:
                 return no
     return None
+
 def caminho(no_a_init, no_a_final):
     caminho_init = []
     caminho_final = []
@@ -32,11 +33,13 @@ def caminho(no_a_init, no_a_final):
     while final is not None:
         caminho_final.append(final.position)
         final = final.no_pai
-        
-    caminho_final.reverse()
+    
+    caminho_final.append(aux.goal_state)
 
     path = caminho_init + caminho_final[1:]
-    pprint.pprint(path)
+    pprint.pprint(caminho_final[::-1])
+    pprint.pprint(caminho_init)
+    
     return path
 
 

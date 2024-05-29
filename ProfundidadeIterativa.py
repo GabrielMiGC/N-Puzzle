@@ -5,15 +5,18 @@ import auxiliares as aux # type: ignore
 def caminho(no_atual):
     caminhof = []
     atual = no_atual
+    
     while atual is not None:
-        caminhof.append(atual.position)
+        
+        caminhof.append(no_atual.position)
+        print(atual.position)
         atual = atual.no_pai
-    return caminhof[::-1]
+    return caminhof
 
 def Profundidade_Iterativa(max_Deep):
     #iniciar timer
     timer_starter = time.perf_counter()
-
+    
     #só esta usando g como profundidade do no 
     no_inicial = aux.Node(None, aux.initial_state)
     no_inicial.g = no_inicial.h = no_inicial.f = 0

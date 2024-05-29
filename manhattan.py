@@ -1,6 +1,7 @@
 import time
 import heapq
 import auxiliares as aux
+import pprint as pr
 
 #Função que compara cada elemento/posição do estado atual com as do estado objetivo e retorna um valor h de acordo com o quao parecida estão
 def custo_estimado(estado_atual:list, goal_state:list):
@@ -28,7 +29,6 @@ def caminho(no_atual):
 def A_manhattan():
     #iniciar timer
     timer_starter = time.perf_counter()
-
 
     no_inicial = aux.Node(None, aux.initial_state)
     no_inicial.h = custo_estimado(no_inicial.position, aux.goal_state)

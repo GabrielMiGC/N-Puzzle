@@ -1,7 +1,7 @@
 import auxiliares as aux
 import heapq
 import time
-import pprint
+
 
 def calculo_heuristica(estado_atual, estado_obj):
     h = 0
